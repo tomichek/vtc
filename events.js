@@ -13,7 +13,7 @@
     };
   
     EVDB.API.call('/events/search', oArgs, function(oData) {
-     //console.log(oData);
+     console.log(oData);
       // console.log(typeof oData['events']['event']);
       if(oData['events'] != null){
         if (oData['events']['event'] != null){
@@ -38,7 +38,7 @@
                 'lieu : ' +kikou[index]['venue_name'] + 
                 '<br> start : ' + kikou[index]['start_time'] + ' End : ' +kikou[index]['stop_time'] + 
                 '<br> description : '+ kikou[index]['description']  + 
-                '<br><a href="http://maps.apple.com/?q=' +kikou[index]['venue_address'] +' '+ kikou[index]['postal_code'] +'">' +kikou[index]['venue_address'] +' '+ kikou[index]['postal_code'] +'<a/>';
+                '<br><a href="http://maps.apple.com/?q=' +kikou[index]['venue_address'] +' '+ kikou[index]['postal_code'] +'">' +kikou[index]['venue_address'] +' '+ kikou[index]['postal_code'] + '<a/>';
 
               // active popup info 
               var infowindow = new google.maps.InfoWindow({
@@ -54,7 +54,15 @@
               var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                title: 'Uluru (Ayers Rock)'
+                // icon: {
+                //   path: fontawesome.markers.TAXI,
+                //   scale: 0.5,
+                //   strokeWeight: 0.2,
+                //   strokeColor: 'black',
+                //   strokeOpacity: 1,
+                //   fillColor: '#117aa2',
+                //   fillOpacity: 0.7,
+                // }
               });
 
               marker.addListener('click', function() {
